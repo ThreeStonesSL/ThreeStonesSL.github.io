@@ -185,7 +185,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-16 21:49:59 / 修改时间：21:50:53" itemprop="dateCreated datePublished" datetime="2021-04-16T21:49:59+08:00">2021-04-16</time>
+              <time title="创建时间：2021-04-16 21:49:59 / 修改时间：21:58:09" itemprop="dateCreated datePublished" datetime="2021-04-16T21:49:59+08:00">2021-04-16</time>
             </span>
 
           
@@ -210,7 +210,7 @@
 </ul>
 <p>下面说正文：</p>
 <h1 id="General-encoder-decoder-network-for-image-captioning"><a href="#General-encoder-decoder-network-for-image-captioning" class="headerlink" title="General encoder-decoder network for image captioning"></a>General encoder-decoder network for image captioning</h1><ul>
-<li>目前一般的encoder-decoder network for image captioning 是<strong>CNN提取image的特征，然后RNN来生成句子</strong>，例如下图所示。<br><img src="http://ww1.sinaimg.cn/large/006uWRWVly1g14r211sidj30kb0fy0v3.jpg" alt="img"></li>
+<li>目前一般的encoder-decoder network for image captioning 是<strong>CNN提取image的特征，然后RNN来生成句子</strong>，例如下图所示。<br><img src="/images/006uWRWVly1g14r211sidj30kb0fy0v3.jpg" alt="img"></li>
 <li>进一步有<strong>加入attention</strong> [1]，下图是提取14×14×512 feature map of the fourth convolutional layer，然后 flatten to 196 × 512 before feed into decoder。在输入到decoder时对这196个feature vector进行attention的加权求和。<br><img src="http://ww1.sinaimg.cn/large/006uWRWVly1g14rdh7wg7j33ak1ep7wj.jpg" alt="img"></li>
 <li>也有<strong>提取images 中的object，以此来提取显著信息，对object feature 进行attention的加权求和并送入decoder</strong>。具体地，使用RPN 的ROI pooling来提取objects feature，然后对LSTM的每一个step ,对这所有的object features进行attention操作，再作为输入送入LSTM[2]。如下图<br><img src="http://ww1.sinaimg.cn/large/006uWRWVly1g14u74yahwj30q30modsg.jpg" alt="img"></li>
 </ul>
